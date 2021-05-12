@@ -1,10 +1,14 @@
-FROM python:3.8
+FROM pytorch/pytorch:1.7.0-cuda11.0-cudnn8-devel
 
-COPY requirements.txt .
+RUN apt-get update && \
+    apt-get install -y && \
+    apt-get install -y apt-utils wget
+
+RUN pip install --upgrade pip
+
 RUN pip install -r requirements.txt
 
-WORKDIR /app
+WORKDIR /gpt2_poem/
+EXPOSE 80
 COPY . .
-
-CMD python3 main.py
-
+ENTRYPOINT ["python", "main.py"]
