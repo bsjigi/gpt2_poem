@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install -y apt-utils wget
 
 RUN pip install --upgrade pip
-
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 WORKDIR /gpt2_poem/
