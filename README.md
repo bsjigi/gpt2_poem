@@ -20,5 +20,5 @@ cd gpt2_poem
 ```
 docker login
 docker pull bsjigi/poem-generator
-docker run -p 80:80 - bsjigi/poem-generator  
+docker run -p 80:80 -d bsjigi/poem-generator  
 ```
