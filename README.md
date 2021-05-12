@@ -21,5 +21,4 @@ cd gpt2_poem
 docker login
 docker pull bsjigi/poem-generator
 docker run -it -p 80:80 bsjigi/poem-generator  
-jupyter notebook --ip=0.0.0.0 --allow-root
 ```
